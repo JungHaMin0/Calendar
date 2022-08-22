@@ -3,6 +3,14 @@ const addNodes = () => {
     const table = document.createElement("table");
     let idx = 1;
 
+    let now = new Date();
+    let month = now.getMonth() + 1;
+    let year = now.getFullYear();
+    const lastDay = new Date(year, month, 0).getDate();
+    console.log(lastDay);
+
+    
+
     for(let i=0; i<6; i++){
         const tr = document.createElement("tr");
         for(let j=0; j<5; j++){
@@ -13,6 +21,7 @@ const addNodes = () => {
         table.appendChild(tr);
     }
     target.appendChild(table);
+    
 };
 $(document).ready(addNodes);
 
@@ -26,5 +35,8 @@ const day = () => {
     const pText2 = document.createTextNode(month + "월");
     p.append(pText1, pText2);
     target.appendChild(p);
+
+    const lastDay = new Date(year, month, 0).getDate();
+    console.log(lastDay);
 };  
 $(document).ready(day);
