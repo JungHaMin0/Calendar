@@ -14,7 +14,9 @@ const calendar = () => {
   //2022 8 23 31 31
   console.log(prevDay); //1
 
+  //https://gurtn.tistory.com/54
   const dateBoard = document.querySelector('.dateBoard');
+// 다음달 날짜 표시하기
   for(let i=0; i<prevDay; i++){
     dateBoard.innerHTML += `<div class=""noColor">공백</div>`;
   }
@@ -25,6 +27,7 @@ const calendar = () => {
 
   const dateTitle = document.querySelector('.dateTitle');
   dateTitle.innerHTML = CurrentYear + "년 " + CurrentMonth + "월";
+
 };
 $(document).ready(calendar);
 
