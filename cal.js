@@ -7,15 +7,7 @@ const calendar = () => {
 
   console.log(prevDay);
   console.log(lastDay);
-  let html = '';
 
-  for(let i=0; i<prevDay; i++) {
-    const span = document.createElement('span');
-    span.innerHTML = i;
-  }
 
-  for(let i=1; i<=lastDay; i++) {
-    
-  }
 };
 $(document).ready(calendar);
