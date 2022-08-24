@@ -14,7 +14,6 @@ const calendar = () => {
   //2022 8 23 31 31
   console.log(prevDay); //1
 
-  //https://gurtn.tistory.com/54
   const dateBoard = document.querySelector('.dateBoard');
 // 다음달 날짜 표시하기
   for(let i=0; i<prevDay; i++){
@@ -26,23 +25,21 @@ const calendar = () => {
   }
 
   const dateTitle = document.querySelector('.dateTitle');
-  dateTitle.innerHTML = CurrentYear + "년 " + CurrentMonth + "월";
+  dateTitle.innerText = CurrentYear + "년 " + CurrentMonth + "월";
 
 };
 $(document).ready(calendar);
 
-const makeCalendar = () => {
+const makeCal = () => {
   const date = new Date();
-  const beforeDay = document.querySelector('.beforeDay');
-  const afterDay = document.querySelector('.afterDay');
 
-  makeCal(date)
-  beforeDay.onclick = () => {
-    makeCal(new Date(date.setMonth(getMonth()-1)));
+  calendar(date);
+  document.querySelector('.beforeDay').onclick = () => {
+    calendar(new Date(date.setMonth(date.getMonth()-1)));
   };
 
-  afterDay.onclick = () => {
-    makeCal(new Date(date.setMonth(getMonth()+1)));
+  document.querySelector('.afterDay').onclick = () => {
+    calendar(new Date(date.setMonth(date.getMonth()+1)));
   };
 };
-$(document).ready(makeCalendar);
+$(document).ready(makeCal);
