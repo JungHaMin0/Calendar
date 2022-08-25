@@ -1,3 +1,4 @@
+//cal이 된거고 이거는 내가 혼자 해본거임!
 const addNodes = () => {
     const target = document.getElementsByClassName("play")[0];
     const table = document.createElement("table");
