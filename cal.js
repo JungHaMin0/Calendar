@@ -16,9 +16,10 @@ const calendar = (date) => {
     dateBoard.innerHTML += `<div class=""noColor">공백</div>`;
   }
 
-  for (let i=1; i<=thisMon; i++) {
+  for(let i=1; i<=thisMon; i++){
     dateBoard.innerHTML += "<div>" + i + "</div>";
   }
+  
 
   document.querySelector('.dateTitle').innerText = CurrentYear + "년 " + CurrentMonth + "월";
 
