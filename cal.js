@@ -15,11 +15,11 @@ const calendar = (date) => {
   dateBoard.innerHTML = '';
   // 다음달 날짜 표시하기
   for(let i=0; i<prevDay; i++){
-    dateBoard.innerHTML += `<div class=""noColor">공백</div>`;
+    dateBoard.innerHTML += `<div class="noColor">--</div>`;
   }
 
   for(let i=1; i<=thisMon; i++){
-    dateBoard.innerHTML += "<div>" + i + "</div>";
+    dateBoard.innerHTML += `<div class="asd">` + i + `</div>`;
   }
   
   const limitDay = prevDay + lastDay;
@@ -27,11 +27,11 @@ const calendar = (date) => {
   //이게 뭘까?
 
   for (let i = limitDay; i <nextDay; i++) {
-    dateBoard.innerHTML += `<div class=""noColor">공백</div>`;
+    dateBoard.innerHTML += `<div class="noColor">--</div>`;
   }
 
-  document.querySelector('.dateTitle').innerText = CurrentYear + "년 " + CurrentMonth + "월";
-
+  document.querySelector('.dateTitle').innerText = CurrentYear + ". " + CurrentMonth;
+  
 };
 $(document).ready(calendar);
 
