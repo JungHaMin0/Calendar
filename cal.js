@@ -5,7 +5,9 @@ const calendar = (date) => {
   const prevMon = new Date(CurrentYear, CurrentMonth-1, 0).getDate();
   const thisMon = new Date(CurrentYear, CurrentMonth, 0).getDate();
   const prevDay = new Date(CurrentYear, CurrentMonth-1, 1).getDay();
-
+  const lastDay = new Date(CurrentYear, CurrentMonth, 0).getDate();
+  
+  console.log(lastDay);
   console.log(CurrentYear, CurrentMonth, today, prevMon, thisMon, prevDay);
   //2022 8 23 31 31 1
 
@@ -20,6 +22,13 @@ const calendar = (date) => {
     dateBoard.innerHTML += "<div>" + i + "</div>";
   }
   
+  const limitDay = prevDay + lastDay;
+  const nextDay = Math.ceil(limitDay / 7) * 7;
+  //이게 뭘까?
+
+  for (let i = limitDay; i <nextDay; i++) {
+    dateBoard.innerHTML += `<div class=""noColor">공백</div>`;
+  }
 
   document.querySelector('.dateTitle').innerText = CurrentYear + "년 " + CurrentMonth + "월";
 
