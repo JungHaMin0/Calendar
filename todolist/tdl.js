@@ -5,13 +5,17 @@ const todolist = () => {
     const rel = document.querySelector(".rel");
 
     submit.onclick = () => {
+        const li = document.createElement('li');
         if(input.value == '') {
             alert('내용 입력해 주세요.');
         } else {
-            const li = document.createElement('li');
             li.innerHTML = input.value;
             rel.appendChild(li);
         }
+        li.onclick = () => {
+            li.style.textDecoration = "line-through";
+        }
     };
+
 };
 $(document).ready(todolist);
