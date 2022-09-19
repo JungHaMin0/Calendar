@@ -20,6 +20,11 @@ const paintTodos = (newTodo) => {
   alldel.addEventListener("click", function allDeleteTodos() {
     li.remove();
   });
+  li.addEventListener("dblclick", function modi() {
+    const modify = prompt('수정하실 내용을 입력하세요.', newTodo);
+    newTodo = modify;
+    span.innerText = modify;
+  });
 };
 
 const handleSubmit = (event) => {
