@@ -1,6 +1,12 @@
 /*todos*/
 
 /*list*/
+.tle {
+    border: 1px solid red;
+    text-align: center;
+}
 .box {
+    display: inline-block;
     border:1px solid black;
+    background-color: aliceblue;
 }
